@@ -80,6 +80,19 @@ and paste it in:
 
 `<machine>` matches by name (prefix ok) or `server_id`.
 
+### `paseo-fork.py` — fork a session at turn N
+
+Bonus tool (run on the machine that holds the session file). Paseo/Claude Code
+have no native "fork from turn N", but a Claude session is just a `jsonl` linked
+list under `~/.claude/projects/`. This copies the prefix up to a chosen turn,
+rewrites the session id, and imports it as a fresh agent — original untouched.
+
+```bash
+paseo-fork.py <session-uuid> --cwd <path> --list          # pick a fork point
+paseo-fork.py <session-uuid> --cwd <path> --turn 35       # fork through turn 35
+paseo-fork.py <session-uuid> --cwd <path> --turn 35 --before --label myfork
+```
+
 ### Env
 
 | Var | Default | Meaning |
