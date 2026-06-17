@@ -1,0 +1,6 @@
+# Never commit real fleet registries — they hold live daemon credentials (offer URLs)
+paseo-fleet.json
+*.local.json
+__pycache__/
+*.pyc
+.DS_Store

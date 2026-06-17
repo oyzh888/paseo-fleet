@@ -1,0 +1,17 @@
+{
+  "_comment": "Copy to ~/.paseo/paseo-fleet.json (chmod 600) or point PASEO_FLEET_REGISTRY at it. One entry per machine. The 'offer' is the pairing URL from the Paseo app (gear icon -> pairing link) or `paseo daemon pair` on that machine. It is a live credential that can connect to your daemon — keep this file private, never commit it.",
+  "fleet": [
+    {
+      "name": "laptop",
+      "note": "my MacBook",
+      "server_id": "srv_xxxxxxxxxxxx",
+      "offer": "https://app.paseo.sh/#offer=PASTE_OFFER_URL_HERE"
+    },
+    {
+      "name": "gpu-box",
+      "note": "training server",
+      "server_id": "srv_yyyyyyyyyyyy",
+      "offer": "https://app.paseo.sh/#offer=PASTE_OFFER_URL_HERE"
+    }
+  ]
+}
