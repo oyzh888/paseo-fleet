@@ -127,9 +127,9 @@ def _json_complete(buf):
 
 
 def ls_json(m):
-    """Return (machine, list-of-agents-or-None, error-str)."""
+    """Return all agents, including completed/stopped and every cwd root."""
     try:
-        out, _early, err = paseo_stream(m["offer"], ["ls", "-o", "json"],
+        out, _early, err = paseo_stream(m["offer"], ["ls", "-a", "-g", "--json"],
                                         done=_json_complete)
         if err:
             return m, None, err

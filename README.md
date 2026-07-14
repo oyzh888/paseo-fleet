@@ -68,7 +68,7 @@ and paste it in:
 
 | Command | What |
 |---|---|
-| `overview` | scan every machine → table of all agents (concurrent) |
+| `overview` | scan every machine → all active/completed/stopped agents across all directories (concurrent) |
 | `machines` | registered machines + reachability |
 | `triage` | only agents that are running or need attention |
 | `find <query>` | cross-machine search by name / shortId / provider / cwd |
@@ -110,6 +110,10 @@ stdout and **kills the process the instant the result is complete** (valid JSON,
 a quiet period for text streams), turning a ~32s `overview` into ~2s.
 
 ## Requirements
+
+Fleet inventory deliberately runs `paseo ls -a -g --json`. Without `-a -g`,
+Paseo omits completed/stopped agents and sessions outside the caller's current
+directory, silently undercounting conversation history.
 
 - `paseo` CLI on PATH (`@getpaseo/cli`), v0.1.96+
 - Python 3.8+

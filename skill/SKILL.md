@@ -81,7 +81,7 @@ Driver: `python3 ~/.claude/skills/paseo-fleet/paseo-fleet.py <cmd>`
 
 | Command | What |
 |---|---|
-| `overview` | concurrent scan of every machine → table of all agents (🟢 running / ⚪ idle) |
+| `overview` | concurrent `paseo ls -a -g --json` scan → all active/completed/stopped agents across all directories |
 | `machines` | registered machines + reachability |
 | `triage` | only agents that are running or `requiresAttention` (who needs you) |
 | `find <query>` | **cross-machine** agent search by name / shortId / provider / cwd substring |
